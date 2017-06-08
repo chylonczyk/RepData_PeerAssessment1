@@ -108,7 +108,7 @@ asum <- tapply(activity$steps, activity$date, sum,na.rm=TRUE)
 hist(asum, col = "blue", border = "red", main = "Total number of steps taken each day (NA excluded)", xlab = "Steps", breaks=seq(from=0, to=25000, by=2500), ylim=c(0, 20))
 ```
 
-![](PA1_template_files/figure-html/hist-1.png)<!-- -->
+![](figure/hist-1.png)<!-- -->
 3. Calculate and report the mean and median of the total number of steps taken per day
 
 ```r
@@ -134,7 +134,7 @@ plot(int$interval,
      main="Time series plot of the average number of steps taken (NA excluded)")
 ```
 
-![](PA1_template_files/figure-html/plot-1.png)<!-- -->
+![](figure/plot-1.png)<!-- -->
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -197,7 +197,7 @@ asumNA <- tapply(activity$steps, activity$date, sum)
 hist(asumNA, col = "blue", border = "red", main = "Total number of steps taken each day (NA as mean)", xlab = "Steps", breaks=seq(from=0, to=25000, by=2500), ylim=c(0, 30))
 ```
 
-![](PA1_template_files/figure-html/histNA-1.png)<!-- -->
+![](figure/histNA-1.png)<!-- -->
 
 
 ```r
@@ -280,4 +280,4 @@ xyplot(average ~ interval | type, int2,
        layout=c(1,2))
 ```
 
-![](PA1_template_files/figure-html/plotNA-1.png)<!-- -->
+![](figure/plotNA-1.png)<!-- -->

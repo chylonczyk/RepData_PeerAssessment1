@@ -72,7 +72,7 @@ asum <- tapply(activity$steps, activity$date, sum,na.rm=TRUE)
 ```
 
 2. Make a histogram of the total number of steps taken each day
-```{r hist, echo = TRUE}
+```{r hist, echo = TRUE, fig.path= 'figure/'}
 # histogram of the total number of steps taken each day
 hist(asum, col = "blue", border = "red", main = "Total number of steps taken each day (NA excluded)", xlab = "Steps", breaks=seq(from=0, to=25000, by=2500), ylim=c(0, 20))
 ```
@@ -87,7 +87,7 @@ The mean is equal to `r amean` and median to `r amedian`.
 
 ## What is the average daily activity pattern?
 1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
-```{r plot, echo = TRUE}
+```{r plot, echo = TRUE, fig.path= 'figure/'}
 # plot the data
 plot(int$interval, 
      int$average, 
@@ -132,7 +132,7 @@ activity$steps <- na.aggregate(activity$steps)
 ```
 
 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
-```{r histNA, echo = TRUE}
+```{r histNA, echo = TRUE, fig.path= 'figure/'}
 # sum of steps taken each day
 asumNA <- tapply(activity$steps, activity$date, sum)
 
@@ -176,7 +176,7 @@ Some rows of the data with NAs replaced by mean
 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
 I will use the R package lattice
-```{r plotNA, echo = TRUE}
+```{r plotNA, echo = TRUE, fig.path= 'figure/'}
 require(lattice)
 # time serie plots
 xyplot(average ~ interval | type, int2, 
